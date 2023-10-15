@@ -1,7 +1,7 @@
 HELP.md
 target/
 *.jar
-mvn/
+.mvn/
 
 ### STS ###
 .apt_generated
