@@ -12,4 +12,4 @@ Along the way, I also intend to develop more analytics-related or trickier endpo
 Over time, I hope it can develop into a robust and comprehensive API with proper usage of the best-practices. Start date is 14th October, 2023.
 
 Initial ERD:
-![ER Diagram]([http://url/to/img.png](https://hizliresim.com/i7pbk8l)https://hizliresim.com/i7pbk8l)
+![ER Diagram]([https://hizliresim.com/i7pbk8l])
