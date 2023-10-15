@@ -3,6 +3,8 @@ target/
 *.jar
 .mvn/
 
+environment.properties
+
 ### STS ###
 .apt_generated
 .classpath
