@@ -1,5 +1,5 @@
 # healthify
-Healthify is/will be a complete hospital appointment management, review, and analytics API written in Java/Spring.
+Healthify is/will be a complete hospital appointment management, review, and analytics API written in Java/Spring Boot/Spring Data JPA. N-tier architecture will be used.
 
 I'm investing in Java/Spring, and this is where I'd like to hone my abilities while progressively increasing the complexity of this hypothetical API.
 
