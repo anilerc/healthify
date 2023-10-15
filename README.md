@@ -12,4 +12,5 @@ Along the way, I also intend to develop more analytics-related or trickier endpo
 Over time, I hope it can develop into a robust and comprehensive API with proper usage of the best-practices. Start date is 14th October, 2023.
 
 Initial ERD:
-![ER Diagram]([https://hizliresim.com/i7pbk8l])
+
+![image](https://github.com/anilerc/healthify/assets/79990807/e9305c0d-db32-4a5f-8e0c-251fa2a07f9b)
