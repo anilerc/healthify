@@ -1,7 +1,12 @@
 # healthify
-Written in Java/Spring, healthify will be/is a comprehensive hospital appointment management, review and analytics API.
-I am investing in Java/Spring, and here, I would like to practice my skills, while gradually improving the complexity of this imaginary API.
-I will be sharing updates after each iteration...
-Starting with the basic CRUD operations. Along the way, I will be adding features such as authentication/authorization with Spring Security; logging, unit and integration tests...
-Over the time, I also plan to prepare some analytics/trickier endpoints, such as, "Get Highest Reviewed Doctors Since a Date", or, some endpoints working with geolocation, or, APIs to schedule recurring appointments.
-I hope it can evolve as a robust and strong API over the time.
+Healthify is/was a complete hospital appointment management, review, and analytics API written in Java/Spring.
+
+I'm investing in Java/Spring, and this is where I'd like to hone my abilities while progressively increasing the complexity of this hypothetical API.
+
+I'll post updates following each iteration...
+
+the fundamental CRUD operations first. Along the way, I'll be adding functionality like Spring Security authentication and authorisation, logging, unit testing, and integration tests.
+
+Along the way, I also intend to develop more analytics-related or tougher endpoints, such "Get Highest Reviewed Doctors Since a Date," or endpoints that use geolocation, or APIs for recurring appointment scheduling.
+
+Over time, I hope it can develop into a solid and reliable API.
