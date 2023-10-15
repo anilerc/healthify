@@ -24,14 +24,16 @@ public class DoctorController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Doctor>> getDoctors() {
-        List<Doctor> doctors = doctorService.getDoctors();
+        List<Doctor> doctors = doctorService.findAll();
         return new ResponseEntity<>(doctors, HttpStatus.OK);
     }
 
+/*
     @GetMapping
+
     public ResponseEntity<Page<Doctor>> getDoctors(@RequestParam(name = "pageNumber", defaultValue = "0") Integer pageNumber,
                                    @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
-        Page<Doctor> doctorPages = doctorService.getDoctors(pageNumber, pageSize);
+        Page<Doctor> doctorPages = doctorService.(pageNumber, pageSize);
         return new ResponseEntity<>(doctorPages, HttpStatus.OK);
     }
 
@@ -47,5 +49,7 @@ public class DoctorController {
         doctorService.addDoctor(d);
         return new ResponseEntity<>(d, HttpStatus.CREATED);
     }
+    */
+
 }
 

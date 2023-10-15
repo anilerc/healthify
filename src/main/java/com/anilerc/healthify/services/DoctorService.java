@@ -10,32 +10,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DoctorService {
+public class DoctorService extends GenericService<Doctor> {
 
-    private final Crud<Doctor> crud;
     private final DoctorRepository repo;
 
     @Autowired
-    public DoctorService(Crud<Doctor> crud, DoctorRepository repo) {
-        this.crud = crud;
+    public DoctorService(DoctorRepository repo) {
+        super(repo);
         this.repo = repo;
     }
 
-    public List<Doctor> getDoctors() {
-        return crud.getAll(repo);
-    }
-
-    public Page<Doctor> getDoctors(int pageNumber, int pageSize) {
-        return crud.getAllPaginated(repo, pageNumber, pageSize);
-    }
-
-    public Doctor getDoctorById(Long id) {
-        return crud.getById(repo, id);
-    }
-
-    public void addDoctor(Doctor d) {
-        crud.save(repo, d);
-    }
 
 
 }

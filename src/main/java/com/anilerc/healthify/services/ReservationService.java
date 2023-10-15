@@ -23,7 +23,7 @@ public class ReservationService {
         this.patientService = patientService;
     }
 
-
+/*
     public List<Reservation> getReservations() {
         return repo.findAll();
     }
@@ -37,6 +37,8 @@ public class ReservationService {
         repo.save(r);
 
     }
+    */
+
 
 
 }
