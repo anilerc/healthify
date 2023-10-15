@@ -1,11 +1,10 @@
 package com.anilerc.healthify.services;
 
-import com.anilerc.healthify.exceptions.UserNotFoundException;
 import com.anilerc.healthify.models.Doctor;
 import com.anilerc.healthify.repositories.DoctorRepository;
+import com.anilerc.healthify.utility.Crud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,30 +12,30 @@ import java.util.List;
 @Service
 public class DoctorService {
 
-    // for doctor-specific repository actions
-    private final DoctorRepository doctorRepository;
+    private final Crud<Doctor> crud;
+    private final DoctorRepository repo;
 
     @Autowired
-    public DoctorService(DoctorRepository doctorRepository) {
-        this.doctorRepository = doctorRepository;
+    public DoctorService(Crud<Doctor> crud, DoctorRepository repo) {
+        this.crud = crud;
+        this.repo = repo;
     }
 
     public List<Doctor> getDoctors() {
-        return doctorRepository.findAll();
+        return crud.getAll(repo);
     }
 
     public Page<Doctor> getDoctors(int pageNumber, int pageSize) {
-        PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
-        return doctorRepository.findAll(pageRequest);
+        return crud.getAllPaginated(repo, pageNumber, pageSize);
     }
 
-
     public Doctor getDoctorById(Long id) {
-        return doctorRepository.findById(id).orElseThrow(() -> new UserNotFoundException("Doctor not found."));
+        return crud.getById(repo, id);
     }
 
     public void addDoctor(Doctor d) {
-        doctorRepository.save(d);
+        crud.save(repo, d);
     }
+
 
 }

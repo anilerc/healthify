@@ -1,7 +1,8 @@
 package com.anilerc.healthify.models;
 
-import com.anilerc.healthify.utility.Gender;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import lombok.*;
 
@@ -32,10 +33,13 @@ public class Patient extends Person {
     @Getter
     @Setter
     @Past
+    @NotNull
     private LocalDate dateOfBirth;
 
     @Getter
     @Setter
+    @Min(5)
+    @NotNull
     private String phoneNumber;
 
     @Getter
