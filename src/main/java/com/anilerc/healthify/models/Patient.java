@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
+@Getter
 @Entity(name = "Patient")
 @Table
 @AllArgsConstructor
@@ -30,19 +31,12 @@ public class Patient extends Person {
     @Getter
     private Long id;
 
-    @Getter
     @Setter
+    @Getter
     @Past
     @NotNull
     private LocalDate dateOfBirth;
 
-    @Getter
-    @Setter
-    @Min(5)
-    @NotNull
-    private String phoneNumber;
-
-    @Getter
     @Setter
     private String address;
 

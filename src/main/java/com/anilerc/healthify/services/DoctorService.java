@@ -2,40 +2,24 @@ package com.anilerc.healthify.services;
 
 import com.anilerc.healthify.models.Doctor;
 import com.anilerc.healthify.repositories.DoctorRepository;
-import com.anilerc.healthify.utility.Crud;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Service
-public class DoctorService {
+public class DoctorService extends GenericService<Doctor> {
 
-    private final Crud<Doctor> crud;
     private final DoctorRepository repo;
 
     @Autowired
-    public DoctorService(Crud<Doctor> crud, DoctorRepository repo) {
-        this.crud = crud;
+    public DoctorService(DoctorRepository repo) {
+        super(repo);
         this.repo = repo;
     }
 
-    public List<Doctor> getDoctors() {
-        return crud.getAll(repo);
+    public boolean checkAvailability(Doctor d, LocalDateTime start, LocalDateTime end) {
+        return repo.countReservationsInTimeInterval(d, start, end) == 0;
     }
-
-    public Page<Doctor> getDoctors(int pageNumber, int pageSize) {
-        return crud.getAllPaginated(repo, pageNumber, pageSize);
-    }
-
-    public Doctor getDoctorById(Long id) {
-        return crud.getById(repo, id);
-    }
-
-    public void addDoctor(Doctor d) {
-        crud.save(repo, d);
-    }
-
-
 }
+

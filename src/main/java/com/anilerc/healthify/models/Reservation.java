@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
+@Getter
 @Entity(name = "Reservation")
 @Table
 @AllArgsConstructor
@@ -25,7 +26,6 @@ public class Reservation {
             referencedColumnName = "patient_id",
             foreignKey = @ForeignKey(name = "reservation_patient_fk")
     )
-    @Getter
     private Patient patient;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -35,7 +35,6 @@ public class Reservation {
             referencedColumnName = "doctor_id",
             foreignKey = @ForeignKey(name = "reservation_doctor_fk")
     )
-    @Getter
     private Doctor doctor;
 
 
@@ -50,14 +49,11 @@ public class Reservation {
             generator = "reservation_sequence"
     )
     @Column(name = "reservation_id", updatable = false)
-    @Getter
     private Long id;
 
-    @Getter
-    private LocalDate startTime;
+    private LocalDateTime startTime;
 
-    @Getter
-    private LocalDate endTime;
+    private LocalDateTime endTime;
 
 
     @Autowired
@@ -70,7 +66,7 @@ public class Reservation {
 
     }
 
-    public Reservation(Patient patient, Doctor doctor, LocalDate startTime, LocalDate endTime) {
+    public Reservation(Patient patient, Doctor doctor, LocalDateTime startTime, LocalDateTime endTime) {
         this.patient = patient;
         this.doctor = doctor;
         this.startTime = startTime;

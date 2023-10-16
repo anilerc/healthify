@@ -21,12 +21,12 @@ public class PatientController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Patient>> getPatients() {
-        List<Patient> patients= patientService.getPatients();
+        List<Patient> patients= patientService.findAll();
         return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
     @PostMapping
     public void addPatient(@RequestBody Patient patient) {
-        patientService.addPatient(patient);
+        patientService.save(patient);
     }
 }
