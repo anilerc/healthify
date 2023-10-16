@@ -16,7 +16,7 @@ public class BillingService extends GenericService<Billing>{
     }
 
     public Boolean hasUnpaidBilling(Patient p) {
-        return repo.countUnpaidBillingRecords(p.getId()) != 0;
+        return true;
     }
 
     public void save(Billing billing) {

@@ -9,8 +9,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BillingRepository extends JpaRepository<Billing, Long> {
-    @Query("SELECT COUNT(r) FROM Billing r " +
-            "WHERE r.patient_id = :patient " +
-            "AND r.is_paid = false")
-    int countUnpaidBillingRecords(@Param("patient") Long patientId);
 }

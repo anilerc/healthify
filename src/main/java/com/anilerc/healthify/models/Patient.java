@@ -28,9 +28,11 @@ public class Patient extends Person {
             generator = "patient_sequence"
     )
     @Column(name = "patient_id", updatable = false)
+    @Getter
     private Long id;
 
     @Setter
+    @Getter
     @Past
     @NotNull
     private LocalDate dateOfBirth;
