@@ -28,11 +28,4 @@ public class ReservationController {
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 
-    /*
-    @PostMapping
-    public void addReservation(@RequestBody CreateReservation body) {
-        reservationService.save(body);
-    }
-    */
-
 }

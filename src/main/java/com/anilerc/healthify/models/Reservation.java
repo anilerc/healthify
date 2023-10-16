@@ -51,9 +51,9 @@ public class Reservation {
     @Column(name = "reservation_id", updatable = false)
     private Long id;
 
-    private LocalDate startTime;
+    private LocalDateTime startTime;
 
-    private LocalDate endTime;
+    private LocalDateTime endTime;
 
 
     @Autowired
@@ -66,7 +66,7 @@ public class Reservation {
 
     }
 
-    public Reservation(Patient patient, Doctor doctor, LocalDate startTime, LocalDate endTime) {
+    public Reservation(Patient patient, Doctor doctor, LocalDateTime startTime, LocalDateTime endTime) {
         this.patient = patient;
         this.doctor = doctor;
         this.startTime = startTime;

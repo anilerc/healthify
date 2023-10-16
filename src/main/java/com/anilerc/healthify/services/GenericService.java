@@ -28,18 +28,8 @@ public class GenericService<T> implements IGenericCrud<T> {
     }
 
     @Override
-    public T save(T entity) {
-        return repo.save(entity);
-    }
-
-    @Override
     public T findById(long id) {
-        return repo.findById(id).orElseThrow(() -> new UserNotFoundException("Not found"));
-    }
-
-    @Override
-    public void delete(T entity) {
-        repo.delete(entity);
+        return repo.findById(id).orElseThrow(() -> new UserNotFoundException("Resource not found."));
     }
 
     @Override
@@ -50,5 +40,10 @@ public class GenericService<T> implements IGenericCrud<T> {
     @Override
     public Long count() {
         return repo.count();
+    }
+
+    @Override
+    public void save(T t) {
+        repo.save(t);
     }
 }
