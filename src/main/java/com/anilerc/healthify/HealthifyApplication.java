@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class HealthifyApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(HealthifyApplication.class, args);
 	}

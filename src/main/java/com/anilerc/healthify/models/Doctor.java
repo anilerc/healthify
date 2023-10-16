@@ -5,6 +5,7 @@ import lombok.*;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
+@Getter
 @Entity
 @Table(name = "Doctor")
 @AllArgsConstructor
@@ -22,18 +23,14 @@ public class Doctor extends Person {
             generator = "doctor_sequence"
     )
     @Column(name = "doctor_id", updatable = false)
-    @Getter
     private Long id;
 
-    @Getter
     @Setter
     private String specialization;
 
-    @Getter
     @Setter
     private int experienceYears;
 
-    @Getter
     @Setter
     private double averageRating;
 

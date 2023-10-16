@@ -6,22 +6,30 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
 @MappedSuperclass
 public class Person {
 
     @Column(nullable = false)
     @NotBlank
+    @Setter
     private String firstName;
 
     @Column(nullable = false)
     @NotBlank
+    @Setter
     private String lastName;
 
     @Column(nullable = false, unique = true)
     @Email
+    @Setter
     private String email;
 
+    @NotNull
+    @Setter
     private String phoneNumber;
 
     @NotNull
@@ -36,46 +44,6 @@ public class Person {
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.gender = gender;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
         this.gender = gender;
     }
 

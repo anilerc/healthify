@@ -28,28 +28,24 @@ public class DoctorController {
         return new ResponseEntity<>(doctors, HttpStatus.OK);
     }
 
-/*
-    @GetMapping
-
     public ResponseEntity<Page<Doctor>> getDoctors(@RequestParam(name = "pageNumber", defaultValue = "0") Integer pageNumber,
                                    @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
-        Page<Doctor> doctorPages = doctorService.(pageNumber, pageSize);
+        Page<Doctor> doctorPages = doctorService.findAllPaginated(pageNumber, pageSize);
         return new ResponseEntity<>(doctorPages, HttpStatus.OK);
     }
 
-
     @GetMapping("/{doctorId}")
     public ResponseEntity<Doctor> getDoctor(@PathVariable Long doctorId) {
-        Doctor doctor = doctorService.getDoctorById(doctorId);
+        Doctor doctor = doctorService.findById(doctorId);
         return new ResponseEntity<>(doctor, HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<Doctor> addDoctor(@Valid @RequestBody Doctor d) {
-        doctorService.addDoctor(d);
+        doctorService.save(d);
         return new ResponseEntity<>(d, HttpStatus.CREATED);
     }
-    */
+
 
 }
 

@@ -15,7 +15,7 @@ import java.util.List;
 */
 public class ReservationController {
 
-/*
+
     private final ReservationService reservationService;
 
     public ReservationController(ReservationService reservationService) {
@@ -24,13 +24,14 @@ public class ReservationController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Reservation>> getReservations() {
-        List<Reservation> reservations = reservationService.getReservations();
+        List<Reservation> reservations = reservationService.findAll();
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 
+    /*
     @PostMapping
     public void addReservation(@RequestBody CreateReservation body) {
-        reservationService.addNewReservation(body);
+        reservationService.save(body);
     }
     */
 
